@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ContactManager.Models.Contact>
+
+<h1>Contacts</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Married</th>
+            <th>Phone</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.DateOfBirth.ToShortDateString()</td>
+                <td>@contact.Married</td>
+                <td>@contact.Phone</td>
+                <td>@contact.Salary</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add New Contact</a>
+
